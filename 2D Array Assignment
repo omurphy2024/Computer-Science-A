@@ -1,0 +1,65 @@
+package pkg2darrayassignment;
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String[][] deckOfCards = new String[4][13];
+
+        // Definining the card index
+        String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
+        for (int suitIndex = 0; suitIndex < 4; suitIndex++) {
+            for (int cardIndex = 0; cardIndex < 13; cardIndex++) {
+                String card = "";
+                switch (cardIndex) {
+                    case 0:
+                        card = "Ace";
+                        break;
+                    case 10:
+                        card = "Jack";
+                        break;
+                    case 11:
+                        card = "Queen";
+                        break;
+                    case 12:
+                        card = "King";
+                        break;
+                    default:
+                        card = Integer.toString(cardIndex + 1);
+                }
+                deckOfCards[suitIndex][cardIndex] = card + " of " + suits[suitIndex];
+            }
+        }
+
+        // Randomizing the deck in order to get a new one each time
+        Random rand = new Random();
+        for (int i = 0; i < 1000; i++) {
+            int suitIndex1 = rand.nextInt(4);
+            int suitIndex2 = rand.nextInt(4);
+            int cardIndex1 = rand.nextInt(13);
+            int cardIndex2 = rand.nextInt(13);
+            String temp = deckOfCards[suitIndex1][cardIndex1];
+            deckOfCards[suitIndex1][cardIndex1] = deckOfCards[suitIndex2][cardIndex2];
+            deckOfCards[suitIndex2][cardIndex2] = temp;
+        }
+
+        // Creating 4 hands
+        String[] hands = new String[4];
+        for (int handIndex = 0; handIndex < 4; handIndex++) {
+            String hand = "";
+            for (int cardIndex = 0; cardIndex < 5; cardIndex++) {
+                int suitIndex = cardIndex + handIndex * 5;
+                hand += deckOfCards[suitIndex / 13][suitIndex % 13] + ", ";
+            }
+            hands[handIndex] = hand.substring(0, hand.length() - 2);
+        }
+
+        // Showing the hands
+        // Creating the hand names as well
+        char handName = '1';
+        for (String hand : hands) {
+            System.out.println("Hand " + handName + ": " + hand);
+            handName++;
+        }
+    }
+}
