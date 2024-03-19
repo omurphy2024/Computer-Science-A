@@ -10,7 +10,7 @@ package main;
  * @author omurphy2024
  */
 
-// Car Class inherits from Vehicle Class
+// Car Class inherits
 public class Main{
 
 
@@ -18,7 +18,7 @@ public class Main{
 
     }
 }
-class Car extends Vehicle{
+class Car {
     int wheels = 4;
      private String color = "White";
     private boolean spoiler = false;
@@ -191,6 +191,74 @@ class SpeedBoat extends Boat {
     public String toString() {
         return super.toString() + "Max Speed: \t\t" + getMaxSpeed() + " knots";
     }
+}
+// Create a plane class
+class Plane {
+    private double maxSpeed;
+
+    public SpeedBoat(String inBrand, double inSpeed, int inPassengers, double inCargo, double inMPG, int numEngines, double maxSpeed) {
+        super(inBrand, inSpeed, inPassengers, inCargo, inMPG, numEngines);
+        this.maxSpeed = maxSpeed;
+    }
+
+    public double getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(double maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Max Speed: \t\t" + getMaxSpeed() + " knots";
+    }
+}
+// Create a spaceship class
+class Spaceship {
+    private double maxSpeed;
+
+    public SpeedBoat(String inBrand, double inSpeed, int inPassengers, double inCargo, double inMPG, int numEngines, double maxSpeed) {
+        super(inBrand, inSpeed, inPassengers, inCargo, inMPG, numEngines);
+        this.maxSpeed = maxSpeed;
+    }
+
+    public double getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(double maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Max Speed: \t\t" + getMaxSpeed() + " knots";
+    }
+}
+
+// Create a trains class
+class Train {
+    private double maxSpeed;
+
+    public SpeedBoat(String inBrand, double inSpeed, int inPassengers, double inCargo, double inMPG, int numEngines, double maxSpeed) {
+        super(inBrand, inSpeed, inPassengers, inCargo, inMPG, numEngines);
+        this.maxSpeed = maxSpeed;
+    }
+
+    public double getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(double maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Max Speed: \t\t" + getMaxSpeed() + " knots";
+    }
+}
 }
 
  
