@@ -192,8 +192,8 @@ class SpeedBoat extends Boat {
         return super.toString() + "Max Speed: \t\t" + getMaxSpeed() + " knots";
     }
 }
-// Create a plane class
-class Plane {
+// Create a electric car class
+class ElectricCar extends Car {
     private double maxSpeed;
 
     public SpeedBoat(String inBrand, double inSpeed, int inPassengers, double inCargo, double inMPG, int numEngines, double maxSpeed) {
@@ -215,7 +215,7 @@ class Plane {
     }
 }
 // Create a spaceship class
-class Spaceship {
+class Spaceship extends Boat {
     private double maxSpeed;
 
     public SpeedBoat(String inBrand, double inSpeed, int inPassengers, double inCargo, double inMPG, int numEngines, double maxSpeed) {
@@ -238,7 +238,7 @@ class Spaceship {
 }
 
 // Create a trains class
-class Train {
+class Train extends Car {
     private double maxSpeed;
 
     public SpeedBoat(String inBrand, double inSpeed, int inPassengers, double inCargo, double inMPG, int numEngines, double maxSpeed) {
