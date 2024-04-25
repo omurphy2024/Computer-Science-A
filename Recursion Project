@@ -1,0 +1,42 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pascaltriangle;
+
+/**
+ *
+ * @author omurphy2024
+ */
+public class PascalTriangle {
+
+    public static void main(String[] args) {
+        int n = 5; // Change this to the desired line number
+        int[] line = new int[n];
+        pascalsTriangleLine(n, line);
+        System.out.println("The " + n + "th line of Pascal's Triangle:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(line[i] + " ");
+        }
+    }
+
+    public static void pascalsTriangleLine(int n, int[] line) {
+        if (n == 1) {
+            line[0] = 0;
+        } else {
+            pascalsTriangleLine(n - 1, line);
+            line[0] = 1;
+            line[n - 1] = 1;
+            calculateValues(line, n);
+        }
+    }
+
+    public static void calculateValues(int[] line, int n) {
+        int[] temp = new int[n];
+        for (int i = 1; i < n - 1; i++) {
+            temp[i] = line[i - 1] + line[i];
+        }
+        System.arraycopy(temp, 1, line, 1, n - 2); //Array list
+    }
+}
