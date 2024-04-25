@@ -5,6 +5,8 @@
  */
 package pascaltriangle;
 
+import java.util.Scanner;
+
 /**
  *
  * @author omurphy2024
@@ -12,13 +14,16 @@ package pascaltriangle;
 public class PascalTriangle {
 
     public static void main(String[] args) {
-        int n = 5; // Change this to the desired line number
-        int[] line = new int[n];
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the line number of Pascal's Triangle: "); //user enters which line they want
+        int n = scanner.nextInt(); //scans the users input
+        int[] line = new int[n]; //defines the input
         pascalsTriangleLine(n, line);
-        System.out.println("The " + n + "th line of Pascal's Triangle:");
+        System.out.println("The " + n + "th line of Pascal's Triangle:"); //displaying the line user picks
         for (int i = 0; i < n; i++) {
             System.out.print(line[i] + " ");
         }
+        scanner.close();
     }
 
     public static void pascalsTriangleLine(int n, int[] line) {
